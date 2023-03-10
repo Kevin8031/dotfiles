@@ -23,9 +23,9 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 -- Copies to system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<C-y>", "\"+y")
+vim.keymap.set("v", "<C-y>", "\"+y")
+vim.keymap.set("n", "<C-Y>", "\"+Y")
 
 -- Undo/Redo
 -- vim.keymap.set("n", "<U>", vim.cmd.redo)
