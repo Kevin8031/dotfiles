@@ -2,7 +2,7 @@
 # Status bar items
 #
 #
-date_formatted=$(date +'%Y-%m-%d %H:%M:%S')
+date_formatted=$(date +'%d-%m-%Y %H:%M:%S')
 battery=$(acpi -b | awk -F'[,: ]' '{printf("%s [%s] [%2s:%2s:%2s]", $4,$6,$8,$9,$10)}')
 brightness=$(light | cut -f 1 -d ".")
 
