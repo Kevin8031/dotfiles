@@ -39,8 +39,11 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+lsp.skip_server_setup({ 'rust_analyzer' })
+
 lsp.setup()
 
+-- configure autopairs after lsp-zero
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
     'confirm_done',
@@ -55,4 +58,14 @@ vim.diagnostic.config({
     underline = true,
     severity_sort = false,
     float = true,
+})
+
+-- configure lsp-zero to use rust-tools instead
+local rust_tools = require('rust-tools')
+rust_tools.setup({
+    server = {
+        on_attach = function()
+            vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+        end
+    }
 })
