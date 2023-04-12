@@ -29,7 +29,3 @@ vim.keymap.set("n", "<C-Y>", "\"+Y")
 
 -- Undo/Redo
 -- vim.keymap.set("n", "<U>", vim.cmd.redo)
-
-vim.keymap.set("n", "<C-b>", function()
-    require 'nvim-tree.api'.tree.toggle()
-end)
