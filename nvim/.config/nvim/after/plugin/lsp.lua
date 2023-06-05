@@ -64,10 +64,25 @@ vim.diagnostic.config({
 local rust_tools = require('rust-tools')
 rust_tools.setup({
     server = {
+        settings = {
+            ["rust-analyzer"] = {
+                cargo = {
+                    features = "all"
+                },
+                procMacro = {
+                    enable = true
+                }
+            }
+        },
         on_attach = function()
             vim.keymap.set('n', 'K', rust_tools.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
             vim.keymap.set("n", "<leader>a", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                desc = "Auto format document on save",
+                pattern = "<buffer>",
+                callback = vim.lsp.buf.formatting_sync
+            })
         end
     }
 })
