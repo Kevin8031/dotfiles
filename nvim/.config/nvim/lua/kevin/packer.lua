@@ -14,15 +14,20 @@ return require('packer').startup(function(use)
     }
 
     -- Install without configuration
-    --  use ('projekt0n/github-nvim-theme')
-
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
+    use ({
+        "rebelot/kanagawa.nvim",
+        config = function ()
+            vim.cmd('colorscheme kanagawa')
         end
     })
+
+    -- use({
+    --     'rose-pine/neovim',
+    --     as = 'rose-pine',
+    --     config = function()
+    --         vim.cmd('colorscheme rose-pine')
+    --     end
+    -- })
 
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
