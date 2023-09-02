@@ -234,4 +234,6 @@ bar {
 }
 
 include $HOME/.config/sway/config.d/*
+
 exec swaybg #404040
+exec redshift
