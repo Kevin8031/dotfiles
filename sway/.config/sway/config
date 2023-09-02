@@ -220,4 +220,4 @@ bar {
 }
 
 include $HOME/.config/sway/config.d/*
-output * bg #000000 solid_color
+exec swaybg #404040
