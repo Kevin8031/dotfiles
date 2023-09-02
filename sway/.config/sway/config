@@ -78,7 +78,7 @@ exec swayidle -w \
     #    -B 'Logout' 'swaymsg exit' \
     #    -B 'Restart' 'systemctl restart' \
     #    -B 'Shutdown' 'systemctl poweroff'
-    bindsym $mod+Shift+e exec rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
+    bindsym $mod+Shift+e exec rofi -show power-menu -modi power-menu:rofi-power-menu
 #
 # Moving around:
 #
