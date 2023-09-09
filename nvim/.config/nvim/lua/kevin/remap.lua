@@ -29,3 +29,11 @@ vim.keymap.set("n", "<C-Y>", "\"+Y")
 
 -- Undo/Redo
 -- vim.keymap.set("n", "<U>", vim.cmd.redo)
+
+-- H and L for beginning/end of line
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+
+vim.keymap.set("v", "H", "^")
+vim.keymap.set("v", "L", "$")
+
