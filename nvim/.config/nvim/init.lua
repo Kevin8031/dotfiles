@@ -293,7 +293,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -339,6 +339,11 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+-- Copies to system clipboard
+vim.keymap.set("n", "<C-y>", "\"+y")
+vim.keymap.set("v", "<C-y>", "\"+y")
+vim.keymap.set("n", "<C-Y>", "\"+Y")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
