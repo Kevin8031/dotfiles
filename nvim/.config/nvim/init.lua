@@ -345,6 +345,12 @@ vim.keymap.set("n", "<C-y>", "\"+y")
 vim.keymap.set("v", "<C-y>", "\"+y")
 vim.keymap.set("n", "<C-Y>", "\"+Y")
 
+-- Doesn't loose the last element copied in the copy buffer
+-- when replacing another item
+vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d")
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
