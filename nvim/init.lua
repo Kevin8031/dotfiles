@@ -351,6 +351,13 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
+-- H and L for beginning/end of line
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+
+vim.keymap.set("v", "H", "^")
+vim.keymap.set("v", "L", "$")
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
