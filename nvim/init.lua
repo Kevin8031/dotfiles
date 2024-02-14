@@ -190,11 +190,11 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- Nord Theme
+    'nordtheme/vim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'nord'
     end,
   },
 
@@ -265,7 +265,9 @@ require('lazy').setup({
     opts = {} -- this is equalent to setup({}) function
   },
 
-  'mbbill/undotree'
+  'mbbill/undotree',
+  'TabbyML/vim-tabby'
+
 
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -357,6 +359,9 @@ vim.keymap.set("n", "L", "$")
 
 vim.keymap.set("v", "H", "^")
 vim.keymap.set("v", "L", "$")
+
+vim.g.tabby_keybinding_accept = '<S-Tab>'
+vim.g.tabby_keybinding_trigger_or_dismiss = '<C-S-Tab>'
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
