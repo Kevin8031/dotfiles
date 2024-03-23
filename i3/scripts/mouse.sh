@@ -28,7 +28,7 @@ fi
 
 CURRENT_VALUE=$(awk -F 'Button4,' '{print $2}' ~/.imwheelrc)
 
-NEW_VALUE=3
+NEW_VALUE=1
 
 if [ "$NEW_VALUE" == "" ];
 then exit 0
@@ -41,7 +41,7 @@ cat ~/.imwheelrc
 imwheel -kill
 
 # Set mouse speed
-xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
-xinput --set-prop 9 'libinput Accel Speed' -0.85
+xinput --set-prop 10 'libinput Accel Profile Enabled' 0, 1
+xinput --set-prop 10 'libinput Accel Speed' -0.85
 
 # END OF SCRIPT FILE
