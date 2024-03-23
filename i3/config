@@ -20,10 +20,10 @@ set $mod Mod1
 
 
 #This is setup for qwerty
-set $up l
-set $down k
-set $left j
-set $right semicolon
+set $up k
+set $down j
+set $left h
+set $right l
 
 font pango:Hack Nerd Font Mono 8
 
@@ -67,7 +67,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # start dmenu
 #bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#1f222d' -nf '#81a1c1' -sb '#81a1c1' -sf '#1f222d' -fn 'ProFontIIx Nerd Font Mono:bold:pixelsize=18'
-bindsym $mod+d exec --no-startup-id "rofi -show combi -combi-mode 'drun,run,ssh,window' -terminal alacritty -show-icons -lines 10 -width 35"
+bindsym $mod+d exec --no-startup-id "rofi -show combi -lines 10 -width 35"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -show calc -modi calc -lines 10 -width 35"
 
 
 
@@ -138,10 +139,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+$left move left
@@ -163,8 +164,8 @@ bindsym $mod+Shift+Right move right
 #####################################################################################################################
 # next/previous workspace
 
-bindsym Mod1+Tab workspace next
-bindsym Mod1+Shift+Tab workspace prev
+bindsym Mod4+Tab workspace next
+bindsym Mod4+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
 
 #navigate workspaces next / previous
@@ -190,7 +191,7 @@ bindsym $mod+minus scratchpad show
 default_orientation horizontal
 
 # split in horizontal orientation
-bindsym $mod+" split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -281,6 +282,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 
 #####################################################################################################################
@@ -374,6 +379,11 @@ exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
 
 # notification deamon
 exec_always --no-startup-id dunst
+
+# kwallet
+exec --no-startup-id /usr/lib/pam_kwallet_init
+exec --no-startup-id kwalletd6
+exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 
 
 #####################################################################################################################
