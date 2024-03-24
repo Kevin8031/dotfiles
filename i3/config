@@ -313,7 +313,7 @@ bindsym $mod+i bar mode invisible
 #################                          i3 gaps next                                             #################
 #####################################################################################################################
 
-for_window [class="^.*"] border pixel 1
+#for_window [class="^.*"] border pixel 1
 gaps inner 10
 gaps outer 1
 #smart_gaps on
