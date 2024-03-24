@@ -1,6 +1,0 @@
-{
-  "Err != nil": {
-    "prefix": ["eif"],
-    "body": ["if err != nil {", "\t$1", "}"]
-  }
-}
