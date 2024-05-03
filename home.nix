@@ -3,8 +3,8 @@
 {
     imports = [ ./home/i3.nix ];
 
-    home.username = "user";
-    home.homeDirectory = "/home/user";
+    home.username = "kevin";
+    home.homeDirectory = "/home/kevin";
     
     programs.git = {
 	enable = true;
@@ -107,6 +107,9 @@
 	initExtra = "if [ -f $HOME/.p10k.zsh ]; then; source $HOME/.p10k.zsh; fi";
     };
 
+    programs.librewolf = {
+        enable = true;
+    };
 
     # Version used when last configured
     home.stateVersion = "23.11";
