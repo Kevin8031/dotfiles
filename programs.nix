@@ -5,6 +5,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
 	git
+	gcc
     ];
 
     programs.neovim = {
