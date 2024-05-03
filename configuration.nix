@@ -13,14 +13,14 @@
     ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.user = {
+  users.users.kevin = {
     isNormalUser = true;
-    description = "user";
+    description = "kevin";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
   # Let the user be managed by home-manager
-  home-manager.users.user = import ./home.nix;
+  home-manager.users.kevin = import ./home.nix;
 
   environment.variables = { EDITOR = "nvim"; };
 
@@ -139,7 +139,7 @@
   # Enable syncthing
   services.syncthing = {
     enable = true;
-    user = "user";
+    user = "kevin";
     dataDir = "/home/user/Documents/Syncthing";
     configDir = "/home/user/.config/syncthing";
   };
