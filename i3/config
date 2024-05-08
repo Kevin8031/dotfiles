@@ -410,10 +410,10 @@ exec --no-startup-id kdeconnectd
 #####################################################################################################################
 
 bar {
-    height 25
+    height 20
     position bottom
     font pango:Hack Nerd Font Mono 10
-    status_command i3status
+    status_command i3status-rs
     tray_padding 1
     strip_workspace_numbers yes
 
