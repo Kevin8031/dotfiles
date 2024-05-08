@@ -369,6 +369,7 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+bindsym F8 exec --no-startup-id save-replay.sh
 
 # keyboard layout
 exec --no-startup-id "setxkbmap -layout us,it -option 'grp:win_space_toggle'"
