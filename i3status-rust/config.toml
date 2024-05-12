@@ -36,6 +36,8 @@ action = "volume_down"
 block = "sound"
 device_kind = "sink"
 format = " $icon {$volume.eng(w:2) |}"
+show_volume_when_muted = true
+headphones_indicator = true
 [[block.click]]
 button = "left"
 cmd = "pulsemixer"
@@ -44,6 +46,7 @@ cmd = "pulsemixer"
 block = "sound"
 format = "$icon {$volume.eng(w:2) |}"
 device_kind = "source"
+show_volume_when_muted = true
 [[block.click]]
 button = "left"
 cmd = "pulsemixer"
