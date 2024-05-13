@@ -36,7 +36,7 @@ bar {
     height 20
     position bottom
     font pango:Hack Nerd Font Mono 10
-    status_command i3status-rs
+    status_command i3status-rs ~/.config/sway/i3status-rs.toml
     tray_padding 1
     strip_workspace_numbers yes
 
@@ -65,6 +65,6 @@ client.urgent           #900000 #900000 #ffffff #900000
 
 client.background       #242424
 
-output "*" background /usr/share/backgrounds/nordic-wallpapers/nord_bridge.png fill
+output "*" background /usr/share/backgrounds/nordic-wallpapers/windows-panic.png fill
 
 include ~/.config/sway/config.d/*

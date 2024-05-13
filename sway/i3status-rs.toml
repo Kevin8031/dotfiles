@@ -3,6 +3,9 @@ icons_format = "{icon}"
 [theme]
 theme = "nord-dark"
 
+[theme.overrides]
+idle_bg = "#1f222d"
+
 [icons]
 icons = "material-nf"
 # [icons.overrides]
@@ -11,8 +14,8 @@ icons = "material-nf"
 
 [[block]]
 block = "kdeconnect"
-bat_critical = 10
 bat_warning = 20
+bat_critical = 10
 
 [[block]]
 block = "music"
@@ -31,6 +34,12 @@ action = "volume_up"
 [[block.click]]
 button = "down"
 action = "volume_down"
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "backlight"
 
 [[block]]
 block = "sound"
@@ -66,6 +75,10 @@ button = "right"
 cmd = "htop"
 
 [[block]]
+block = "net"
+format = "$icon {$signal_strength $ssid|Wired connection}"
+
+[[block]]
 block = "disk_space"
 path = "/"
 info_type = "available"
@@ -74,26 +87,6 @@ interval = 20
 warning = 20.0
 alert = 10.0
 format = " $icon ssd: $available.eng(w:2)"
-
-[[block]]
-block = "disk_space"
-path = "/mnt/new_storage/"
-info_type = "available"
-alert_unit = "GB"
-interval = 20
-warning = 20.0
-alert = 10.0
-format = " storage: $available.eng(w:2)"
-
-[[block]]
-block = "disk_space"
-path = "/mnt/raid/"
-info_type = "available"
-alert_unit = "GB"
-interval = 20
-warning = 20.0
-alert = 10.0
-format = " raid: $available.eng(w:2) "
 
 [[block]]
 block = "time"
