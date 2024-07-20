@@ -41,7 +41,13 @@ cat ~/.imwheelrc
 imwheel -kill
 
 # Set mouse speed
-xinput --set-prop 10 'libinput Accel Profile Enabled' 0, 1
-xinput --set-prop 10 'libinput Accel Speed' -0.85
+mouse_id=-1
+mouse_id=`xinput list | grep 'Logitech G502 HERO Gaming Mouse' | head -n 1 | grep -o 'id=[0-9]\+' | cut -d '=' -f 2`
+
+if [ $mouse_id -ne -1 ]; then
+    xinput --set-prop $mouse_id 'libinput Accel Profile Enabled' 0, 1
+    xinput --set-prop $mouse_id 'libinput Accel Speed' -0.85
+fi
+
 
 # END OF SCRIPT FILE
