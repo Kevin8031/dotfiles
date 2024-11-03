@@ -42,7 +42,7 @@ imwheel -kill
 
 # Set mouse speed
 mouse_id=-1
-mouse_id=`xinput list | grep 'Logitech G502 HERO Gaming Mouse' | head -n 1 | grep -o 'id=[0-9]\+' | cut -d '=' -f 2`
+mouse_id=`xinput list | grep 'Logitech G502 HERO Gaming Mouse' | grep -iv 'keyboard' | grep -o 'id=[0-9]\+' | cut -d '=' -f 2`
 
 if [ $mouse_id -ne -1 ]; then
     xinput --set-prop $mouse_id 'libinput Accel Profile Enabled' 0, 1
