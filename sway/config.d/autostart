@@ -39,4 +39,7 @@ exec --no-startup-id swayidle -w \
     resume      "swaymsg output * power on" \
     timeout 300 $lock
 
+exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # vim: sw=4

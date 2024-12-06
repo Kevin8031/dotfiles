@@ -37,7 +37,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+d exec --no-startup-id $menu
 
 # show calculator
-bindsym $mod+Shift+d exec --no-startup-id $calc
+bindsym $mod+Control+d exec --no-startup-id $calc
 
 # show clipboard history
 bindsym Mod4+v exec --no-startup-id $clipboard_history
